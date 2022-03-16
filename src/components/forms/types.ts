@@ -22,11 +22,14 @@ export interface IFormInputProps extends ICommonFormFieldProps {
   defaultValue?: string;
   placeholder?: string;
   disabled?: boolean;
+  required?: boolean;
 }
 
 export interface IFormTextareaProps extends Omit<IFormInputProps, 'type'> {
   rows: number;
 }
+
+export interface IFormFileProps extends Omit<IFormInputProps, 'type' | 'placeholder' | 'defaultValue'> {}
 
 export interface IFormRadioProps extends ICommonFormFieldProps {
   options: ReadonlyArray<{

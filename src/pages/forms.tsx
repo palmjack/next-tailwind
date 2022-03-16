@@ -6,6 +6,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 
 import FormCheckbox from 'components/forms/FormCheckbox';
+import FormFile from 'components/forms/FormFile';
 import FormInput from 'components/forms/FormInput';
 import FormRadio from 'components/forms/FormRadio';
 import FormSelect from 'components/forms/FormSelect';
@@ -65,12 +66,14 @@ const Forms: NextPage = () => {
               type="text"
               placeholder="placeholder a"
               hint="We’ll never share your details."
+              required
             />
             <FormInput name="b" label="input b" type="text" placeholder="placeholder b" />
             <FormTextarea name="c" label="input c" rows={4} placeholder="placeholder c" />
             <FormCheckbox name="d" label="checkbox d" />
             <FormRadio name="e" label="radio g" options={radioOptions} />
             <FormSelect name="f" label="select f" options={selectOptions} />
+            <FormFile name="g" label="file g" />
             <CustomButton text="Submit" variant="primary" type="submit" />
             <CustomButton text="Reset" variant="outline" type="reset" onClick={onReset} />
           </form>
