@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       <div className="bg-[#bada55] p-[50px] [color:black] hover:bg-[#123456] hover:[color:white]">
         <h2>Missing utility?</h2>
         <p>Arbitrary properties to the rescue (something like inline CSS)</p>
+        <p>Some ne content here</p>
       </div>
       <ul className="mt-3 w-48 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
         <li className="relative w-full rounded-t-lg border-b border-gray-200 py-2 px-4 dark:border-gray-600">
