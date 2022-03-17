@@ -1,90 +1,51 @@
-import { forwardRef, useRef, useState } from 'react';
-import type { PropsWithChildren } from 'react';
+import { Fragment } from 'react';
+import type { ReactElement } from 'react';
 import type { FC } from 'react';
+import { Menu as HeadlessDropdown, Transition } from '@headlessui/react';
 import classNames from 'classnames';
-import Link from 'next/link';
-import { useClickAway } from 'react-use';
 
-import type { TDropdownProps, TDropdownMenuProps, TDropdownMenuItemProps } from 'components/shared/dropdown/types';
-import ChevronIcon from 'icons/chevron.svg';
+interface IProps {
+  text: string;
+  children: ReactElement | ReactElement[];
+  buttonClassName?: string;
+  menuClassName?: string;
+}
 
-const DropdownMenu = forwardRef<HTMLDivElement, PropsWithChildren<TDropdownMenuProps>>(
-  ({ children, id, show, closeFn }, ref) => {
-    return (
-      <div
-        ref={ref}
-        id={id}
-        className={classNames(
-          'invisible absolute top-full left-0 z-10 mt-1 w-44 list-none divide-y divide-gray-100 rounded bg-white text-base opacity-0 shadow transition-opacity',
-          { '!visible !opacity-100': show }
-        )}
-        onClick={closeFn}
-      >
-        <ul aria-labelledby={`${id}-button`} role="menu">
-          {children}
-        </ul>
-      </div>
-    );
-  }
-);
-
-const DropdownMenuItem: FC<TDropdownMenuItemProps> = ({ type, href, text, className, onClick }) => {
-  const baseItemClasses = 'w-full text-center block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100';
-
-  switch (type) {
-    case 'link':
-      return (
-        <li role="menuitem">
-          <Link href={href}>
-            <a className={classNames(baseItemClasses, className)} onClick={onClick}>
-              {text}
-            </a>
-          </Link>
-        </li>
-      );
-    case 'button':
-      return (
-        <li role="menuitem">
-          <button className={classNames(baseItemClasses, className)} onClick={onClick}>
-            {text}
-          </button>
-        </li>
-      );
-  }
-};
-
-const Dropdown: FC<TDropdownProps> = ({ id, text, menuItems }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef(null);
-
-  const toggleDropdown = (): void => {
-    setIsOpen((prev) => !prev);
-  };
-
-  const handleClickAway = (): void => {
-    if (!isOpen) return;
-    setIsOpen(false);
-  };
-
-  // close dropdown on outside click
-  useClickAway(ref, handleClickAway);
-
+const Dropdown: FC<IProps> = ({ children, text, buttonClassName, menuClassName }) => {
+  // TODO: empty menu placeholder
+  // TODO: make sure that children has only DropdownItem components
   return (
-    <div ref={ref} className="relative inline-flex">
-      <button
-        id={`${id}-button`}
-        className="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
-        onClick={toggleDropdown}
-      >
-        {text}
-        <ChevronIcon className={classNames('ml-2 h-4 w-4 transition-transform', { 'rotate-180': isOpen })} />
-      </button>
-      <DropdownMenu id={id} show={isOpen} closeFn={toggleDropdown}>
-        {menuItems.map((item, idx) => (
-          <DropdownMenuItem key={idx} {...item} />
-        ))}
-      </DropdownMenu>
+    <div className="inline-flex w-56">
+      <HeadlessDropdown as="div" className="relative inline-block text-left">
+        <div>
+          <HeadlessDropdown.Button
+            className={classNames(
+              'inline-flex w-full justify-center rounded-md bg-black bg-opacity-70 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75',
+              buttonClassName
+            )}
+          >
+            {text}
+          </HeadlessDropdown.Button>
+        </div>
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
+        >
+          <HeadlessDropdown.Items
+            className={classNames(
+              'absolute left-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
+              menuClassName
+            )}
+          >
+            {children}
+          </HeadlessDropdown.Items>
+        </Transition>
+      </HeadlessDropdown>
     </div>
   );
 };
