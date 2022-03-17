@@ -2,11 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Collapse from 'components/shared/collapse/Collapse';
-import CustomButton from 'components/shared/customButton/CustomButton';
+import Collapse from 'components/shared/Collapse';
+import CustomButton from 'components/shared/CustomButton';
 import Dropdown from 'components/shared/dropdown/Dropdown';
 import DropdownItem from 'components/shared/dropdown/DropdownItem';
-import Modal from 'components/shared/modal/Modal';
+import Modal from 'components/shared/Modal';
 
 const Home: NextPage = () => {
   return (
@@ -34,29 +34,46 @@ const Home: NextPage = () => {
         <div className="mb-5 last:mb-0">
           <h2 className="mb-2 text-2xl font-bold">Custom button</h2>
           <CustomButton variant="primary" text="primary" />
+          <CustomButton variant="secondary" text="secondary" />
+          <CustomButton variant="danger" text="danger" />
           <CustomButton variant="outline" text="outline" />
         </div>
         <div className="mb-5 last:mb-0">
           <h2 className="mb-2 text-2xl font-bold">@headlessUI dropdown component</h2>
-          <Dropdown text="Dropdown btn text">
+          <Dropdown text="Dropdown button">
             <DropdownItem as="button" label="option 1" />
             <DropdownItem as="button" label="option 2" />
             <DropdownItem as="button" label="console.log" onClick={() => console.log('clicked')} />
-            <DropdownItem as="link" label="go to forms" href="/forms" />
+            <DropdownItem as="link" label="link to /forms" href="/forms" />
           </Dropdown>
         </div>
         <div className="mb-5 last:mb-0">
           <h2 className="mb-2 text-2xl font-bold">@headlessUI disclosure</h2>
-          <Collapse
-            text="What is your refund policy?"
-            content="If you're unhappy with your purchase for any reason, email us
-                within 90 days and we'll refund you in full, no questions asked."
-          />
-          <Collapse text="I've got defaultOpen set to true" content="Hello world!" defaultOpen />
+          <Collapse text="What is your refund policy?">
+            <p>
+              If you`re unhappy with your purchase for any reason, email us within 90 days and we`ll refund you in full,
+              no questions asked.
+            </p>
+          </Collapse>
+          <Collapse text="I've got defaultOpen set to true" defaultOpen>
+            <div className="font-bold text-gray-500">Hello world!</div>
+          </Collapse>
         </div>
         <div className="mb-5 last:mb-0">
           <h2 className="mb-2 text-2xl font-bold">@headlessUI modal</h2>
-          <Modal buttonText="open dialog" />
+          <Modal buttonText="open dialog">
+            <div>
+              <h2 className="mb-4 text-xl font-bold">Modal title</h2>
+            </div>
+            <div>
+              <p className="text-md mb-8 text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin viverra velit id tristique rhoncus. Donec
+                ultricies laoreet efficitur. Aliquam in elit nec dolor pulvinar egestas quis vitae urna. Class aptent
+                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean in tortor
+                malesuada, feugiat orci vitae, ornare diam.
+              </p>
+            </div>
+          </Modal>
         </div>
       </div>
     </div>
