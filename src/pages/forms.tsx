@@ -11,7 +11,7 @@ import FormInput from 'components/forms/FormInput';
 import FormRadio from 'components/forms/FormRadio';
 import FormSelect from 'components/forms/FormSelect';
 import FormTextarea from 'components/forms/FormTextarea';
-import CustomButton from 'components/shared/customButton/CustomButton';
+import CustomButton from 'components/shared/CustomButton';
 
 const selectOptions = [
   {
