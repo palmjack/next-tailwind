@@ -13,7 +13,7 @@ export const archivePosts: TArchivePosts[] = [
   { text: 'react cheatsheets', url: 'https://www.reactacademy.ca/handouts/' },
   {
     text: 'przekazywanie refa z hooka useRef do komponentu dziecka:',
-    url: 'https://www.youtube.com/watch?v=ScT4ElKd6eo'
+    url: 'https://www.youtube.com/embed/ScT4ElKd6eo'
   },
   {
     text: 'a tutaj na końcu rozwiązanie jak połączyć kilka refów razem:',
@@ -24,7 +24,7 @@ export const archivePosts: TArchivePosts[] = [
     url: 'https://github.com/facebook/react/blob/master/packages/react-reconciler/src/ReactFiberHooks.js'
   },
   { url: 'https://alligator.io/js/v8-optional-chaining-nullish-coalescing/' },
-  { text: 'teraz na pewno polubisz reduxa ;)', url: 'https://youtu.be/9lCmbth63k0' },
+  { text: 'teraz na pewno polubisz reduxa ;)', url: 'https://www.youtube.com/embed/9lCmbth63k0' },
   {
     url: 'https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680'
   },
@@ -47,11 +47,11 @@ export const archivePosts: TArchivePosts[] = [
   },
   {
     text: 'Chyba najlepszy film o react-query, w drugiej czesci tworca opowiada o useMutation i queryCache',
-    url: 'https://www.youtube.com/watch?v=AMieB70uCIw'
+    url: 'https://www.youtube.com/embed/AMieB70uCIw'
   },
   { text: 'TS any vs unknown', url: 'https://fsgeek.pl/post/typescript-any-vs-unknown/' },
-  { text: 'TS interface vs type', url: 'https://www.youtube.com/watch?v=crjIq7LEAYw' },
-  { text: 'TS useReducer', url: 'https://www.youtube.com/watch?v=9KzQ9xFSAEU' },
+  { text: 'TS interface vs type', url: 'https://www.youtube.com/embed/crjIq7LEAYw' },
+  { text: 'TS useReducer', url: 'https://www.youtube.com/embed/9KzQ9xFSAEU' },
   { text: 'FB zrobil cos na ksztalt reduxa', url: 'https://recoiljs.org' },
   {
     url: 'https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/'
@@ -191,7 +191,7 @@ export const archivePosts: TArchivePosts[] = [
     text: '@here fajny feature doszedl w VSC',
     url: 'https://twitter.com/matanbobi/status/1447891309566562306'
   },
-  { url: 'https://www.youtube.com/watch?v=qSkHRVLcj6U' },
+  { url: 'https://www.youtube.com/embed/qSkHRVLcj6U' },
   {
     text: 'Jakby nam kiedys przyszlo do glowy robic upgrade React Router do v.6',
     url: 'https://reactrouter.com/docs/en/v6/upgrading/v5'
@@ -241,9 +241,9 @@ export const archivePosts: TArchivePosts[] = [
   },
   {
     text: "@here zdecydowanie warto obejrzec w kontekscie optymalizacji reduce'a",
-    url: 'https://youtu.be/tcZbY-Q0TIE'
+    url: 'https://www.youtube.com/embed/tcZbY-Q0TIE'
   },
-  { text: 'Optymalizacja contextu z uzyciem react-tracked', url: 'https://youtu.be/6yBv-_COJkk' },
+  { text: 'Optymalizacja contextu z uzyciem react-tracked', url: 'https://www.youtube.com/embed/6yBv-_COJkk' },
   { text: 'zostawiam tu, moze kiedys sie przyda', url: 'https://www.maptiler.com/cloud/plans/' },
   {
     text: 'wrzucam tu bo to wazne info (dotyczy wymuszanego full reloada)',
