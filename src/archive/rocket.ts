@@ -43,7 +43,7 @@ export const archivePosts: TArchivePosts[] = [
   },
   {
     text: 'a tu duzo fajnych, pozytecznych rzeczy',
-    url: ' https://css-tricks.com/phuoc-nguyens-one-page-wonders/'
+    url: 'https://css-tricks.com/phuoc-nguyens-one-page-wonders'
   },
   {
     text: 'Chyba najlepszy film o react-query, w drugiej czesci tworca opowiada o useMutation i queryCache',
@@ -89,7 +89,7 @@ export const archivePosts: TArchivePosts[] = [
     text: 'Lazysizes, wspierany jest tez lazyloading iframeow, wykorzystalismy na historii secure ',
     url: 'https://github.com/aFarkas/lazysizes'
   },
-  { text: '', url: 'https://dev.to/ibrahima92/react-typescript-how-to-set-types-on-hooks-cheat-sheet-gll' },
+  { url: 'https://dev.to/ibrahima92/react-typescript-how-to-set-types-on-hooks-cheat-sheet-gll' },
   {
     text: 'Jesli chcesz uzywac fetcha, to rob to dobrze',
     url: 'https://kentcdodds.com/blog/replace-axios-with-a-simple-custom-fetch-wrapper'
